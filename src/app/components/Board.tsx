@@ -29,54 +29,30 @@ export default function Board({ xIsNext, squares, onPlay }: props) {
 
         onPlay(nextSquares);
     }
+
+    const boardRows = [...Array(3)].map((x, i) => {
+        const boardSquares = [...Array(3)].map((x, j) => {
+            return (
+                <Square
+                    key={3 * i + j}
+                    value={squares[3 * i + j]}
+                    onSquareClick={() => handleClick(3 * i + j)}
+                />
+            );
+        });
+
+        return (
+            <div key={i} className="board-row">
+                {boardSquares}
+            </div>
+        );
+    });
     return (
         <>
             <div className="board-row">
                 <div className="status">{status}</div>
             </div>
-
-            <div className="board-row">
-                <Square
-                    value={squares[0]}
-                    onSquareClick={() => handleClick(0)}
-                />
-                <Square
-                    value={squares[1]}
-                    onSquareClick={() => handleClick(1)}
-                />
-                <Square
-                    value={squares[2]}
-                    onSquareClick={() => handleClick(2)}
-                />
-            </div>
-            <div className="board-row">
-                <Square
-                    value={squares[3]}
-                    onSquareClick={() => handleClick(3)}
-                />
-                <Square
-                    value={squares[4]}
-                    onSquareClick={() => handleClick(4)}
-                />
-                <Square
-                    value={squares[5]}
-                    onSquareClick={() => handleClick(5)}
-                />
-            </div>
-            <div className="board-row">
-                <Square
-                    value={squares[6]}
-                    onSquareClick={() => handleClick(6)}
-                />
-                <Square
-                    value={squares[7]}
-                    onSquareClick={() => handleClick(7)}
-                />
-                <Square
-                    value={squares[8]}
-                    onSquareClick={() => handleClick(8)}
-                />
-            </div>
+            {boardRows}
         </>
     );
 }
