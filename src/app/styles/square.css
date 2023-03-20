@@ -1,11 +1,23 @@
 .square {
-    font-size: 100px;
-    width: 200px;
-    height: 200px;
-    color: red;
+  font-size: 100px;
+  width: 200px;
+  height: 200px;
+  color: red;
 }
 .board-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  border: 1px solid crimson;
+}
+.status{
+    font-size: xx-large;
+}
+.game{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

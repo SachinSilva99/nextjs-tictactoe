@@ -1,5 +1,5 @@
 import './styles/square.css';
-import Board from './components/Board';
+import Game from './components/Game';
 export default function Home() {
-    return <Board/>;
+    return <Game/>;
 }
