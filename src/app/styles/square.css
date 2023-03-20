@@ -1,0 +1,11 @@
+.square {
+    font-size: 100px;
+    width: 200px;
+    height: 200px;
+    color: red;
+}
+.board-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
